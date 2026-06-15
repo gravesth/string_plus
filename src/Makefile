@@ -1,5 +1,5 @@
 CС = gcc 
-CLAGS = -Wall -Werror -Wextra -Include
+CFLAGS = -Wall -Werror -Wextra -Include
 
 # TEST_TARGET = gcov_report
 TARGET = s21_string.a
@@ -27,7 +27,7 @@ str/s21_strerror.o: str/s21_strerror.c
 
 
 test:
-	gcc -o test tests/test_s21_memchr.c tests/test_s21_memcmp.c  tests/test_s21_strerror.c tests/test_s21_strncpy.c $(CHECK_LIBS) && ./test
+	gcc -o test $(CFLAGS) tests/test_runner.c tests/mem/test_s21_memchr.c tests/mem/test_s21_memcmp.c  tests/str/test_s21_strerror.c tests/str/test_s21_strncpy.c str/*.c mem/*.c $(CHECK_LIBS) && ./test
 
 style:
 	clang-format -i *.c *.h
