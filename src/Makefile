@@ -35,6 +35,7 @@ style:
 	clang-format -i *.c *.h
 
 clean:
+
 	rm -f $(TARGET) && rm -f *.o
 
 .PHONY: all test clean gcov_report
