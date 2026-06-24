@@ -7,6 +7,7 @@ int main() {
   SRunner *sr = srunner_create(NULL);
   srunner_add_suite(sr, memcmp_suite());
   srunner_add_suite(sr, memcpy_suite());
+  srunner_add_suite(sr, memset_suite());
   srunner_add_suite(sr, memchr_suite());
   srunner_add_suite(sr, strncpy_suite());
   srunner_add_suite(sr, strerror_suite());
