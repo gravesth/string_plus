@@ -1,5 +1,5 @@
 #include "../s21_string.h"
-
+// сравнение двух блоков памяти. n - количество байт для сравнения 
 int s21_memcmp(const void *str1, const void *str2, s21_size_t n) { 
 	const unsigned char *ptr1 = (unsigned char *)str1;
 	const unsigned char *ptr2 = (unsigned char *)str2;
