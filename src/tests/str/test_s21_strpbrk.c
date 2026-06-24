@@ -3,7 +3,6 @@
 #include "../../s21_string.h"
 #include "../test_runner.h"
 
-// tc_basic
 
 START_TEST(start_symbol_test) {
   ck_assert_ptr_eq(s21_strpbrk("abcd", "a"), strpbrk("abcd", "a"));
@@ -46,7 +45,7 @@ START_TEST(empty_str_test) {
 }
 END_TEST
 
-// tc_specific
+
 
 START_TEST(register_test) {
   ck_assert_ptr_eq(s21_strpbrk("abcd", "ABCD"), strpbrk("abcd", "ABCD"));
@@ -65,8 +64,8 @@ START_TEST(special_symbol_test) {
 END_TEST
 
 Suite *strpbrk_suite(void) {
-  Suite *s = suite_create("Strpbrk Module");
-  TCase *tc_basic = tcase_create("Basic tests");
+  Suite *s = suite_create("test module");
+  TCase *tc_basic = tcase_create("test block 1");
   tcase_add_test(tc_basic, start_symbol_test);
   tcase_add_test(tc_basic, end_symbol_test);
   tcase_add_test(tc_basic, center_symbol_test);
@@ -74,13 +73,13 @@ Suite *strpbrk_suite(void) {
   tcase_add_test(tc_basic, some_symbol_test2);
   suite_add_tcase(s, tc_basic);
 
-  TCase *tc_empty = tcase_create("Empty tests");
+  TCase *tc_empty = tcase_create("test block 2");
   tcase_add_test(tc_empty, empty_str1_test);
   tcase_add_test(tc_empty, empty_str2_test);
   tcase_add_test(tc_empty, empty_str_test);
   suite_add_tcase(s, tc_empty);
 
-  TCase *tc_specific = tcase_create("Specific tests");
+  TCase *tc_specific = tcase_create("Test block 3");
   tcase_add_test(tc_specific, register_test);
   tcase_add_test(tc_specific, special_symbol_test);
   tcase_add_test(tc_specific, null_test);

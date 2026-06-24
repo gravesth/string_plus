@@ -10,6 +10,7 @@ int main() {
   srunner_add_suite(sr, memset_suite());
   srunner_add_suite(sr, memchr_suite());
   srunner_add_suite(sr, strncpy_suite());
+  srunner_add_suite(sr, strncat_suite());
   srunner_add_suite(sr, strerror_suite());
   srunner_add_suite(sr, strpbrk_suite());
   srunner_run_all(sr, CK_NORMAL);
