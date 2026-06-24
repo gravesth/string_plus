@@ -1,4 +1,4 @@
-#include "../string.h"
+#include "../s21_string.h"
 #include "strerror.h"
 
 char* s21_strerror(int errnum) {

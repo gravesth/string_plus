@@ -148,7 +148,7 @@
     [133] = "Memory page has hardware error"                                   \
   }
 
-#define MAX_ERROR_CODE 131
+#define MAX_ERROR_CODE 133
 #else
 #define CURRENT_SYSTEM_ERRORS \
   { [0] = "Unknown OS" }
