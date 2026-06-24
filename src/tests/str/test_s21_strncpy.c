@@ -3,7 +3,6 @@
 
 #include "../../s21_string.h"
 #include "../test_runner.h"
-// tc_basic
 START_TEST(test_equal_len) {
   const char *s21_src = "abcdf";
   const char *src = "abcdf";
@@ -51,7 +50,7 @@ START_TEST(test_max_len) {
   free(dest);
 }
 END_TEST
-// tc_return
+
 START_TEST(test_return) {
   const char *s21_src = "abcdf";
   s21_size_t n = 6;
@@ -61,8 +60,7 @@ START_TEST(test_return) {
 
   free(s21_dest);
 }
-END_TEST
-// tc_extreme
+END_TEST // tc_extreme
 START_TEST(test_null) {
   const char *s21_src = "\0";
   s21_size_t n = 1;
@@ -95,7 +93,6 @@ Suite *strncpy_suite(void) {
   tcase_add_test(tc_basic, test_min_len);
   tcase_add_test(tc_basic, test_max_len);
   suite_add_tcase(s, tc_basic);
-
   TCase *tc_return = tcase_create("Return Test");
   tcase_add_test(tc_return, test_return);
   suite_add_tcase(s, tc_return);

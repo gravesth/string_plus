@@ -8,8 +8,7 @@ void *s21_memchr(const void *memptr, int ch, s21_size_t num) {
     for (s21_size_t i = 0; i < num && result == NULL; i++) {
         if (val == *(ptr + i)) result = (ptr + i);
     }
-
-    return result; 
+    return (void *)result; 
 }
 
 
