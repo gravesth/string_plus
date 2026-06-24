@@ -3,9 +3,6 @@
 #include "../../s21_string.h"
 #include "../test_runner.h"
 
-
-//basic_tests
-
 START_TEST(symbol_start)
 {
     ck_assert_int_eq(s21_strcspn("Hello", "H"), strcspn("Hello", "H"));
@@ -23,8 +20,6 @@ START_TEST(symbol_end)
     ck_assert_int_eq(s21_strcspn("Hello", "o"), strcspn("Hello", "o"));
 }
 END_TEST
-
-//empty_tests
 
 START_TEST(str1_empty)
 {
@@ -45,8 +40,6 @@ START_TEST(str_empty)
 }
 END_TEST
 
-//coincidences_tests
-
 START_TEST(complete_coincidences)
 {
     ck_assert_int_eq(s21_strcspn("aaaaaaaaa", "a"), strcspn("aaaaaaaaa", "a"));
@@ -59,8 +52,6 @@ START_TEST(absence_coincidences)
 }
 END_TEST
 
-//specific_test
-
 START_TEST(specific_symbol)
 {
     ck_assert_int_eq(s21_strcspn("Hel\nlo", "\n"), strcspn("Hel\nlo", "\n"));
@@ -72,26 +63,24 @@ Suite *strcspn_suite(void)
 {
     Suite *s = suite_create("Strcspn_module");
 
-    TCase* tc_basic = tcase_create("Basic Tests");
+    TCase* tc_basic = tcase_create("test block1");
     tcase_add_test(tc_basic, symbol_start);
     tcase_add_test(tc_basic, symbol_center);
     tcase_add_test(tc_basic, symbol_end);
     suite_add_tcase(s, tc_basic);
 
-
-    TCase *tc_empty = tcase_create("Empty Tests");
+    TCase *tc_empty = tcase_create("test block 2");
     tcase_add_test(tc_empty, str1_empty);
     tcase_add_test(tc_empty, str2_empty);
     tcase_add_test(tc_empty, str_empty);
     suite_add_tcase(s, tc_empty);
 
-
-    TCase *tc_coincidence = tcase_create("Coincidence Tests");
+    TCase *tc_coincidence = tcase_create("test block 3");
     tcase_add_test(tc_coincidence, complete_coincidences);
     tcase_add_test(tc_coincidence, absence_coincidences);
     suite_add_tcase(s, tc_coincidence);
 
-    TCase *tc_specific = tcase_create("Specific Tests");
+    TCase *tc_specific = tcase_create("test blockj 4");
     tcase_add_test(tc_specific, specific_symbol);
     suite_add_tcase(s, tc_specific);
 

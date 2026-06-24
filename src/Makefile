@@ -28,6 +28,9 @@ s21_memcpy.o: s21_memcpy.c
 str/s21_strncpy.o: str/s21_strncpy.c
 	$(CC) -c str/s21_strncpy.c -o str/s21_strncpy.o
 
+str/s21_strncat.o: str/s21_strncat.c
+	$(CC) -c str/s21_strncat.c -o str/s21_strncat.o
+
 str/s21_strerror.o: str/s21_strerror.c
 	$(CC) -c str/s21_strerror.c -o str/s21_strerror.o
 
